@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Site de prise de notes écrites sur des post-it."
+    />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/responsive.css" />
+    <link rel="icon" href="./Icons/favIcon.svg" />
+
+    <!-- Polices d'écriture -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>ToDoList</title>
+  </head>
+
+  <body>
+    <div class="loader">
+      <h1 class="loader__txt">CHARGEMENT...</h1>
+    </div>
+
+    <div class="confirmRemoveAll">
+      <h2 class="confirmRemoveAll__titre">
+        Êtes-vous sûr de<br />
+        vouloir tout supprimer ?
+      </h2>
+      <button
+        aria-label="Confirmer"
+        type="button"
+        class="buttonRemoveAll buttonConfirm"
+      >
+        Confirmer
+      </button>
+      <button
+        aria-label="Annuler"
+        type="button"
+        class="buttonRemoveAll buttonAnnuler"
+      >
+        Annuler
+      </button>
+    </div>
+    <div class="overlay"></div>
+
+    <div class="newNote">
+      <form class="newNote__form">
+        <div class="form__txt">
+          <input
+            type="text"
+            name="titleNote"
+            class="form__titre form__inputs"
+            placeholder="Titre de la note"
+          />
+
+          <div class="form__buttons">
+            <abbr title="Mot en gras">
+              <input
+                aria-label="Mot en gras"
+                type="button"
+                class="buttons--props buttonBold"
+              />
+            </abbr>
+
+            <abbr title="Mot souligné">
+              <input
+                aria-label="Mot souligné"
+                type="button"
+                class="buttons--props buttonUnderline"
+              />
+            </abbr>
+
+            <abbr title="Retour à la ligne">
+              <input
+                aria-label="Retour à la ligne"
+                type="button"
+                class="buttons--props buttonBreakLine"
+              />
+            </abbr>
+
+            <abbr title="Faire une liste">
+              <input
+                aria-label="Faire une liste"
+                type="button"
+                class="buttons--props buttonList"
+              />
+            </abbr>
+          </div>
+
+          <textarea
+            class="form__description form__inputs"
+            placeholder="Description de la note..."
+          ></textarea>
+        </div>
+
+        <button
+          aria-label="Confirmer"
+          type="submit"
+          class="form__confirmer form__inputs"
+        >
+          Confirmer
+        </button>
+      </form>
+    </div>
+
+    <div class="container">
+      <header class="header">
+        <button aria-label="Nouvelle note" type="button" class="header__button">
+          <span class="button__plus button__plus--rotation"></span
+          ><span class="button__txt">Nouvelle note</span>
+        </button>
+        <abbr title="Tout supprimer">
+          <button
+            aria-label="Poubelle"
+            type="button"
+            class="header__trash"
+          ></button>
+        </abbr>
+      </header>
+
+      <section class="section">
+        <div class="note__texte"></div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
